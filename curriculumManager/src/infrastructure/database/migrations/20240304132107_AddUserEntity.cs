@@ -16,8 +16,8 @@ namespace curriculumManager.src.infrastructure.database.migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    name = table.Column<string>(type: "VARCHAR", nullable: false),
-                    senha = table.Column<string>(type: "VARCHAR", nullable: false),
+                    Name = table.Column<string>(type: "VARCHAR", nullable: false),
+                    Password = table.Column<string>(type: "VARCHAR", nullable: false),
                     Roles = table.Column<string>(type: "VARCHAR", nullable: false),
                     Status = table.Column<bool>(type: "INTEGER", nullable: false)
                 },

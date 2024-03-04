@@ -8,17 +8,17 @@ namespace curriculumManager.src.domain.models
     {
         [Key]
         public int Id { get; private set; }
-        public String name { get; private set; }
-        public String senha  { get; private set; }
+        public String Name { get; private set; }
+        public String Password  { get; private set; }
         public String Roles { get; private set; }
         public Boolean Status { get; private set; }
 
-        public User(int Id, String name, String senha, String Roles)
+        public User(int id, String name, String password, String roles)
         {
-            this.Id = Id;
-            this.name = name;
-            this.senha = senha;
-            this.Roles = Roles;
+            this.Id = id;
+            this.Name = name;
+            this.Password = password;
+            this.Roles = roles;
         }
     }
 }
