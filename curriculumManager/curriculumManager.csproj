@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Core" Version="1.6.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -20,15 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="src\application\interface\" />
+    <Folder Include="Data\" />
     <Folder Include="src\application\util\" />
-    <Folder Include="src\application\services\" />
-    <Folder Include="src\client\controllers\" />
     <Folder Include="src\domain\dtos\" />
-    <Folder Include="src\infrastructure\repositories\" />
     <Folder Include="src\test\" />
-    <Folder Include="src\Storage\downloads\" />
-    <Folder Include="src\Storage\Photos\" />
+    <Folder Include="src\storage\downloads\" />
+    <Folder Include="src\storage\Photos\" />
   </ItemGroup>
 
 </Project>

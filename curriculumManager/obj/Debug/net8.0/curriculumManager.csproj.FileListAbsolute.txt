@@ -158,3 +158,13 @@ C:\Users\ronal\Documents\gitprojects\ProjetoAprendizado.NETAPI\curriculumManager
 C:\Users\ronal\Documents\gitprojects\ProjetoAprendizado.NETAPI\curriculumManager\obj\Debug\net8.0\curriculumManager.pdb
 C:\Users\ronal\Documents\gitprojects\ProjetoAprendizado.NETAPI\curriculumManager\obj\Debug\net8.0\curriculumManager.genruntimeconfig.cache
 C:\Users\ronal\Documents\gitprojects\ProjetoAprendizado.NETAPI\curriculumManager\obj\Debug\net8.0\ref\curriculumManager.dll
+C:\Users\ronal\Documents\gitprojects\ProjetoAprendizado.NETAPI\curriculumManager\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ronal\Documents\gitprojects\ProjetoAprendizado.NETAPI\curriculumManager\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ronal\Documents\gitprojects\ProjetoAprendizado.NETAPI\curriculumManager\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ronal\Documents\gitprojects\ProjetoAprendizado.NETAPI\curriculumManager\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ronal\Documents\gitprojects\ProjetoAprendizado.NETAPI\curriculumManager\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ronal\Documents\gitprojects\ProjetoAprendizado.NETAPI\curriculumManager\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ronal\Documents\gitprojects\ProjetoAprendizado.NETAPI\curriculumManager\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ronal\Documents\gitprojects\ProjetoAprendizado.NETAPI\curriculumManager\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ronal\Documents\gitprojects\ProjetoAprendizado.NETAPI\curriculumManager\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\ronal\Documents\gitprojects\ProjetoAprendizado.NETAPI\curriculumManager\bin\Debug\net8.0\BCrypt.Net-Core.dll

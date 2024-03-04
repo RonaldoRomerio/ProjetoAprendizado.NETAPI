@@ -7,11 +7,11 @@ namespace curriculumManager.src.domain.models
     public class User
     {
         [Key]
-        public int Id { get; private set; }
-        public String Name { get; private set; }
-        public String Password  { get; private set; }
-        public String Roles { get; private set; }
-        public Boolean Status { get; private set; }
+        public int Id { get; set; }
+        public String Name { get; set; }
+        public String Password  { get; set; }
+        public String Roles { get; set; }
+        public Boolean Status { get; set; }
 
         public User(int id, String name, String password, String roles)
         {

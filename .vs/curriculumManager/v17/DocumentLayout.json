@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|c:\\users\\ronal\\documents\\gitprojects\\projetoaprendizado.netapi\\curriculummanager\\src\\infrastructure\\database\\migrations\\20240304132107_adduserentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|solutionrelative:curriculummanager\\src\\infrastructure\\database\\migrations\\20240304132107_adduserentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|c:\\users\\ronal\\documents\\gitprojects\\projetoaprendizado.netapi\\curriculummanager\\src\\application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|solutionrelative:curriculummanager\\src\\application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|c:\\users\\ronal\\documents\\gitprojects\\projetoaprendizado.netapi\\curriculummanager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|solutionrelative:curriculummanager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|c:\\users\\ronal\\documents\\gitprojects\\projetoaprendizado.netapi\\curriculummanager\\src\\application\\interfaces\\iuserlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|solutionrelative:curriculummanager\\src\\application\\interfaces\\iuserlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|c:\\users\\ronal\\documents\\gitprojects\\projetoaprendizado.netapi\\curriculummanager\\src\\infrastructure\\database\\config\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|solutionrelative:curriculummanager\\src\\infrastructure\\database\\config\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|c:\\users\\ronal\\documents\\gitprojects\\projetoaprendizado.netapi\\curriculummanager\\src\\client\\controllers\\loginjwtcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|solutionrelative:curriculummanager\\src\\client\\controllers\\loginjwtcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|c:\\users\\ronal\\documents\\gitprojects\\projetoaprendizado.netapi\\curriculummanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|solutionrelative:curriculummanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|c:\\users\\ronal\\documents\\gitprojects\\projetoaprendizado.netapi\\curriculummanager\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|solutionrelative:curriculummanager\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|c:\\users\\ronal\\documents\\gitprojects\\projetoaprendizado.netapi\\curriculummanager\\src\\application\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|solutionrelative:curriculummanager\\src\\application\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|c:\\users\\ronal\\documents\\gitprojects\\projetoaprendizado.netapi\\curriculummanager\\src\\domain\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|solutionrelative:curriculummanager\\src\\domain\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|c:\\users\\ronal\\documents\\gitprojects\\projetoaprendizado.netapi\\curriculummanager\\curriculummanager.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{0C2C47B7-50C0-4B04-8FA7-15EE7AF05530}|curriculumManager\\curriculumManager.csproj|solutionrelative:curriculummanager\\curriculummanager.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,84 +34,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20240304132107_AddUserEntity.cs",
-              "DocumentMoniker": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\src\\infrastructure\\database\\migrations\\20240304132107_AddUserEntity.cs",
-              "RelativeDocumentMoniker": "curriculumManager\\src\\infrastructure\\database\\migrations\\20240304132107_AddUserEntity.cs",
-              "ToolTip": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\src\\infrastructure\\database\\migrations\\20240304132107_AddUserEntity.cs",
-              "RelativeToolTip": "curriculumManager\\src\\infrastructure\\database\\migrations\\20240304132107_AddUserEntity.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA4wBgAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-04T13:21:12.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\src\\infrastructure\\database\\config\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "curriculumManager\\src\\infrastructure\\database\\config\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\src\\infrastructure\\database\\config\\AppDbContext.cs",
-              "RelativeToolTip": "curriculumManager\\src\\infrastructure\\database\\config\\AppDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-04T13:08:12.323Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "curriculumManager\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\appsettings.Development.json",
-              "RelativeToolTip": "curriculumManager\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-04T12:49:35.359Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "curriculumManager.http",
-              "DocumentMoniker": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\curriculumManager.http",
-              "RelativeDocumentMoniker": "curriculumManager\\curriculumManager.http",
-              "ToolTip": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\curriculumManager.http",
-              "RelativeToolTip": "curriculumManager\\curriculumManager.http",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-03-04T12:49:36.127Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\Program.cs",
-              "RelativeDocumentMoniker": "curriculumManager\\Program.cs",
-              "ToolTip": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\Program.cs",
-              "RelativeToolTip": "curriculumManager\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAdAAAA",
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\src\\application\\services\\TokenService.cs",
+              "RelativeDocumentMoniker": "curriculumManager\\src\\application\\services\\TokenService.cs",
+              "ToolTip": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\src\\application\\services\\TokenService.cs",
+              "RelativeToolTip": "curriculumManager\\src\\application\\services\\TokenService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-04T12:46:54.865Z",
+              "WhenOpened": "2024-03-04T19:49:28.031Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\appsettings.json",
-              "RelativeDocumentMoniker": "curriculumManager\\appsettings.json",
-              "ToolTip": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\appsettings.json",
-              "RelativeToolTip": "curriculumManager\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-04T12:38:42.483Z",
+              "Title": "IUserLogin.cs",
+              "DocumentMoniker": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\src\\application\\interfaces\\IUserLogin.cs",
+              "RelativeDocumentMoniker": "curriculumManager\\src\\application\\interfaces\\IUserLogin.cs",
+              "ToolTip": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\src\\application\\interfaces\\IUserLogin.cs",
+              "RelativeToolTip": "curriculumManager\\src\\application\\interfaces\\IUserLogin.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T19:39:40.001Z",
               "EditorCaption": ""
             },
             {
@@ -126,9 +71,48 @@
               "RelativeDocumentMoniker": "curriculumManager\\src\\domain\\models\\User.cs",
               "ToolTip": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\src\\domain\\models\\User.cs",
               "RelativeToolTip": "curriculumManager\\src\\domain\\models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-04T12:23:06.682Z",
+              "WhenOpened": "2024-03-04T18:34:58.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginJWTController.cs",
+              "DocumentMoniker": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\src\\client\\controllers\\LoginJWTController.cs",
+              "RelativeDocumentMoniker": "curriculumManager\\src\\client\\controllers\\LoginJWTController.cs",
+              "ToolTip": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\src\\client\\controllers\\LoginJWTController.cs",
+              "RelativeToolTip": "curriculumManager\\src\\client\\controllers\\LoginJWTController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAADgvxUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T17:57:45.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\src\\application\\services\\UserService.cs",
+              "RelativeDocumentMoniker": "curriculumManager\\src\\application\\services\\UserService.cs",
+              "ToolTip": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\src\\application\\services\\UserService.cs",
+              "RelativeToolTip": "curriculumManager\\src\\application\\services\\UserService.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAowCYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T17:55:16.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\Program.cs",
+              "RelativeDocumentMoniker": "curriculumManager\\Program.cs",
+              "ToolTip": "C:\\Users\\ronal\\Documents\\gitprojects\\ProjetoAprendizado.NETAPI\\curriculumManager\\Program.cs",
+              "RelativeToolTip": "curriculumManager\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T14:34:50.073Z",
               "EditorCaption": ""
             }
           ]
