@@ -8,14 +8,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "login",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "senha",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "loginUser",
+        "Type": "curriculumManager.src.domain.dtos.user.LoginUser",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -30,10 +25,20 @@
     "Parameters": [
       {
         "Name": "user",
-        "Type": "curriculumManager.src.domain.models.User",
+        "Type": "curriculumManager.src.domain.dtos.user.InsertUser",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "curriculumManager.src.client.controllers.LoginJWTController",
+    "Method": "teste",
+    "RelativePath": "v1/teste",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

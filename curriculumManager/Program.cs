@@ -1,4 +1,5 @@
 using curriculumManager.src.application.interfaces;
+using curriculumManager.src.application.mapping;
 using curriculumManager.src.application.services;
 using curriculumManager.src.client.middleware;
 using curriculumManager.src.infrastructure.Authentication.JWTAuth;
@@ -15,6 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<IUserRepository, UserRepository>()
                 .AddScoped<IUserLogin, UserService>();
 
+builder.Services.AddAutoMapper(typeof(EntityToDTOMappingProfile));
 
 // Add services to the container.
 builder.Services.AddControllers();

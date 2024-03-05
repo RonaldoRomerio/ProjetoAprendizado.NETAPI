@@ -1,24 +1,29 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using curriculumManager.src.domain.Enum;
 
 namespace curriculumManager.src.domain.models
 {
     [Table("User")]
-    public class User
+    public class User : EntityBase
     {
-        [Key]
-        public int Id { get; set; }
+        [Required]
         public String Name { get; set; }
+        [Required]
         public String Password  { get; set; }
-        public String Roles { get; set; }
-        public Boolean Status { get; set; }
+        [Required]
+        public Roles Roles { get; set; }
+        [Required]
+        public Boolean Status { get; set; } = true;
 
-        public User(int id, String name, String password, String roles)
+        public User() { }
+        public User(int id, String name, String password, Roles roles, DateTime created_at)
         {
             this.Id = id;
             this.Name = name;
             this.Password = password;
             this.Roles = roles;
+            this.created_at = created_at;
         }
     }
 }

@@ -36,7 +36,7 @@ namespace curriculumManager.src.application.services
         {
             var claimsIndentity = new ClaimsIdentity();
             claimsIndentity.AddClaim(new Claim(ClaimTypes.Name, user.Id.ToString()));
-            claimsIndentity.AddClaim(new Claim(ClaimTypes.Role, user.Roles));
+            claimsIndentity.AddClaim(new Claim(ClaimTypes.Role, user.Roles.ToString()));
             return claimsIndentity;
         }
     }

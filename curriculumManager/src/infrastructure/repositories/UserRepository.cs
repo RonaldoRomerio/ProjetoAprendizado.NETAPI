@@ -27,10 +27,9 @@ namespace curriculumManager.src.infrastructure.repositories
             return await _context.User.CountAsync(u => u.Name == name);
         }
 
-        public User findUser(string login)
+        public async Task<User> findUser(string login)
         {
-            User user =  _context.User.FirstOrDefault(u => u.Name == login);
-            return user;
+            return await _context.User.FirstOrDefaultAsync(u => u.Name == login);
         }
     }
 }

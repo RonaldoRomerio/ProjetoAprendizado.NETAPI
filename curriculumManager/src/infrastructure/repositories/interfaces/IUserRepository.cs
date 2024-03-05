@@ -6,6 +6,6 @@ namespace curriculumManager.src.infrastructure.repositories
     {
         public Task<int> verifyIfExists(String name);
         public Task<User> createUser(User user);
-        public User findUser(string login);
+        public Task<User> findUser(string login);
     }
 }

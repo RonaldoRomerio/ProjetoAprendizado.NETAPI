@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="BCrypt.Net-Core" Version="1.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.2" />
@@ -25,7 +26,6 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="src\application\util\" />
-    <Folder Include="src\domain\dtos\" />
     <Folder Include="src\test\" />
     <Folder Include="src\storage\downloads\" />
     <Folder Include="src\storage\Photos\" />
