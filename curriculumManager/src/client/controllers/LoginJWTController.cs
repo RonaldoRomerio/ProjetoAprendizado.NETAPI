@@ -30,12 +30,8 @@ namespace curriculumManager.src.client.controllers
         {
             var newUser = await _UserService.RegisterUserAdmin(user);
 
-            if(newUser != null) {
-                return Ok(newUser);
-            } else
-            {
-                return BadRequest("usuário já existente");
-            }
+            return Ok(newUser);
+
         }
     }
 }
