@@ -37,13 +37,6 @@ namespace curriculumManager.src.client.controllers
                 return BadRequest("usuário já existente");
             }
         }
-        [HttpGet]
-        [Route("teste")]
-        public ActionResult teste()
-        {
-            User user = new User(1,"nome", "senha", domain.Enum.Roles.customer, DateTime.UtcNow);
-            return Ok(user.ToString());
-        }
     }
 }
 
