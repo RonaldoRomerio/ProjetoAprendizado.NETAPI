@@ -1,5 +1,6 @@
 using curriculumManager.src.application.interfaces;
 using curriculumManager.src.application.services;
+using curriculumManager.src.client.middleware;
 using curriculumManager.src.infrastructure.Authentication.JWTAuth;
 using curriculumManager.src.infrastructure.database.config;
 using curriculumManager.src.infrastructure.repositories;
@@ -76,10 +77,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseMiddleware<exceptionMiddleware>();
 
 app.MapControllers();
 

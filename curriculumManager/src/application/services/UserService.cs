@@ -15,15 +15,14 @@ namespace curriculumManager.src.application.services
         {
             User user = _userRepository.findUser(login);
             if (user == null)
-                return null;
+                throw new UnauthorizedAccessException("Login ou senha inválido");
 
             var verifyPassword = BCrypt.Net.BCrypt.Verify(senha, user.Password);
 
-            if (verifyPassword)
-            {
-                return TokenService.GenerateToken(user);
-            }
-            return null;
+            if (!verifyPassword)
+                throw new UnauthorizedAccessException("Login ou senha inválido");
+
+            return TokenService.GenerateToken(user);
         }
 
         public async Task<User> RegisterUser(User user)
@@ -31,7 +30,7 @@ namespace curriculumManager.src.application.services
 
             if(await VerifyIfExists(user.Name))
             {
-                return null;
+                throw new UnauthorizedAccessException("Usuário já existe");
             }
             user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password, 15);
             return await _userRepository.createUser(user);

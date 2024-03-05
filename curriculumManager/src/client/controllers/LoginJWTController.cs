@@ -18,16 +18,17 @@ namespace curriculumManager.src.client.controllers
 
         [HttpPost]
         [Route("Login")]
-        public IActionResult Authenticate(String login, String senha)
+        public async Task<ActionResult> Authenticate(String login, String senha)
         {
-            return Ok(_UserService.login(login, senha));
+            var userLogin = await _UserService.login(login, senha);
+            return Ok(userLogin);
         }
 
         [HttpPost]
         [Route("RegisterAdmin")]
-        public IActionResult RegisterAdmin([FromBody] User user)
+        public async Task<ActionResult> RegisterAdmin([FromBody] User user)
         {
-            var newUser = _UserService.RegisterUser(user);
+            var newUser = await _UserService.RegisterUser(user);
 
             if(newUser != null) {
                 return Ok(newUser);
