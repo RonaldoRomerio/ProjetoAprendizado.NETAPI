@@ -1,25 +1,26 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using curriculumManager.src.domain.Enum;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace curriculumManager.src.domain.models
 {
     public class Education : EntityBase
     {
         [ForeignKey("Customer")]
-        public int IdCustomer { get; set; }
+        public int CustomerId { get; set; }
         public String NameSchool { get; set; }
-        public int graduation { get; set; }
+        public Graduation Graduation { get; set; }
         public int StartYear { get; set; }
         public int EndYear { get; set; }
-        public int Class { get; set; }
+        public int Course { get; set; }
 
         public Education() { }
-        public Education(string nameSchool, int graduation, int startYear, int endYear, int Class)
+        public Education(string nameSchool, Graduation graduation, int startYear, int endYear, int course)
         {
             NameSchool = nameSchool;
-            this.graduation = graduation;
+            Graduation = graduation;
             StartYear = startYear;
             EndYear = endYear;
-            this.Class = Class;
+            Course = course;
         }
     }
     

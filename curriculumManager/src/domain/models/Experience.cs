@@ -2,7 +2,7 @@
 
 namespace curriculumManager.src.domain.models
 {
-    public class Experience
+    public class Experience : EntityBase
     {
         [ForeignKey("Customer")]
         public int CustomerId { get; set; }

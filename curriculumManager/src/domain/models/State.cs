@@ -7,6 +7,7 @@ namespace curriculumManager.src.domain.models
         [Required]
         public string Name { get;}
         [Required]
+        [StringLength(2)]
         public string Acronym { get;}
     }
 }

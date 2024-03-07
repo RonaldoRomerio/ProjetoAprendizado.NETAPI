@@ -17,13 +17,12 @@ namespace curriculumManager.src.domain.models
         public Boolean Status { get; set; } = true;
 
         public User() { }
-        public User(int id, String name, String password, Roles roles, DateTime created_at)
+        public User(int id, String name, String password, Roles roles)
         {
             this.Id = id;
             this.Name = name;
             this.Password = password;
             this.Roles = roles;
-            this.created_at = created_at;
         }
     }
 }

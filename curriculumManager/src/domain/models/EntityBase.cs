@@ -9,7 +9,8 @@ namespace curriculumManager.src.domain.models
         [Key]
         public int Id { get; set; }
         [Required]
-        public DateTime created_at { get; set; }
+        public DateTime Created_at { get; set; }
+        public DateTime? Deleted_at { get; set; }
 
         public override string ToString()
         {
