@@ -17,11 +17,146 @@ namespace curriculumManager.src.infrastructe.database.migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
 
+            modelBuilder.Entity("curriculumManager.src.domain.models.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Adress")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("AdressCode")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("CityId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Created_at")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("Deleted_at")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Neighborhood")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("PhoneNumber")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PhoneNumberOptional")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Photo")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Resume")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("StateId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Customer");
+                });
+
+            modelBuilder.Entity("curriculumManager.src.domain.models.Education", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Course")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Created_at")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Deleted_at")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("EndYear")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Graduation")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("NameSchool")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("StartYear")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Education");
+                });
+
+            modelBuilder.Entity("curriculumManager.src.domain.models.Experience", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Company")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("Created_at")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Deleted_at")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Skills")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Experience");
+                });
+
             modelBuilder.Entity("curriculumManager.src.domain.models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Created_at")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("Deleted_at")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -36,9 +171,6 @@ namespace curriculumManager.src.infrastructe.database.migrations
 
                     b.Property<bool>("Status")
                         .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("created_at")
-                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

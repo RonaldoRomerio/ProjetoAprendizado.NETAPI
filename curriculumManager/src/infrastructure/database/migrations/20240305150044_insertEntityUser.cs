@@ -21,7 +21,8 @@ namespace curriculumManager.src.infrastructe.database.migrations
                     Password = table.Column<string>(type: "VARCHAR", nullable: false),
                     Roles = table.Column<int>(type: "VARCHAR", nullable: false),
                     Status = table.Column<bool>(type: "INTEGER", nullable: false),
-                    created_at = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    Created_at = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Deleted_at = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

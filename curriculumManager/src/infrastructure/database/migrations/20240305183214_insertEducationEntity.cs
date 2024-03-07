@@ -21,7 +21,8 @@ namespace curriculumManager.src.infrastructure.database.migrations
                     StartYear = table.Column<int>(type: "int", nullable: true),
                     EndYear = table.Column<int>(type: "int", nullable: false),
                     Class = table.Column<int>(type: "int", nullable: false),
-                    created_at = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    Created_at = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Deleted_at = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -18,7 +18,8 @@ namespace curriculumManager.src.infrastructure.database.migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "VARCHAR", nullable: false),
                     Acronym = table.Column<string>(type: "VARCHAR(2)", nullable: false),
-                    created_at = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    Created_at = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Deleted_at = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

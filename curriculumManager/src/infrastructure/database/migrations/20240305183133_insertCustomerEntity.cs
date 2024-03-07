@@ -27,7 +27,8 @@ namespace curriculumManager.src.infrastructure.database.migrations
                     Resume = table.Column<string>(type: "TEXT", nullable: true),
                     PhoneNumber = table.Column<string>(type: "varchar", nullable: false),
                     PhoneNumberOptional = table.Column<string>(type: "varchar", nullable: false),
-                    created_at = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    Created_at = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Deleted_at = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
