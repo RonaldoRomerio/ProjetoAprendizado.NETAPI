@@ -1,5 +1,4 @@
-﻿using curriculumManager.src.application.interfaces;
-using curriculumManager.src.domain.models;
+﻿using curriculumManager.src.domain.models;
 using curriculumManager.src.infrastructure.Authentication.JWTAuth;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;

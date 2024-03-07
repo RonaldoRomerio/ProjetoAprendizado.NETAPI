@@ -8,6 +8,9 @@ namespace curriculumManager.src.infrastructure.database.config
         public AppDbContext(DbContextOptions options) : base(options){}
 
         public DbSet<User> User { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Experience> Experience { get; set; }
+        public DbSet<Education> Education { get; set; }
 
         public static AppDbContext create(IConfiguration configuration)
         {
