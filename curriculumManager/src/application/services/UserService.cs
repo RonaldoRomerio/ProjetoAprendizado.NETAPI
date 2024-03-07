@@ -39,7 +39,7 @@ namespace curriculumManager.src.application.services
                 throw new UnauthorizedAccessException("Usuário já existe");
 
             completeUser.Password = BCrypt.Net.BCrypt.HashPassword(completeUser.Password, 15);
-            completeUser.created_at = DateTime.UtcNow;
+            completeUser.Created_at = DateTime.UtcNow;
 
             var userCreated = await _userRepository.createUser(completeUser);
 
