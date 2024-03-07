@@ -5,6 +5,7 @@ using curriculumManager.src.client.middleware;
 using curriculumManager.src.infrastructure.Authentication.JWTAuth;
 using curriculumManager.src.infrastructure.database.config;
 using curriculumManager.src.infrastructure.repositories;
+using curriculumManager.src.infrastructure.repositories.interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -14,9 +15,17 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddTransient<IUserRepository, UserRepository>()
-                .AddScoped<IUserLogin, UserService>();
+                .AddTransient<ICustomerRepository, CustomerRepository>()
+                .AddTransient<IExperienceRepository, ExperienceRepository>()
+                .AddTransient<IEducationRepository, EducationRepository>()
+                .AddScoped<IUserLogin, UserService>()
+                .AddScoped<ICustomerService, CustomerService>()
+                .AddScoped<IExperienceService, ExperienceService>()
+                .AddScoped<IEducationService, EducationService>();
 
 builder.Services.AddAutoMapper(typeof(EntityToDTOMappingProfile));
+
+builder.Services.AddCors();
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -81,6 +90,11 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseHttpsRedirection();
+
+app.UseCors(x => x
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader());
 
 app.UseAuthentication();
 app.UseAuthorization();
