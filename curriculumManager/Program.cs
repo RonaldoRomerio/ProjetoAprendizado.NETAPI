@@ -4,6 +4,7 @@ using curriculumManager.src.application.services;
 using curriculumManager.src.client.middleware;
 using curriculumManager.src.infrastructure.Authentication.JWTAuth;
 using curriculumManager.src.infrastructure.database.config;
+using curriculumManager.src.infrastructure.database.seeds;
 using curriculumManager.src.infrastructure.repositories;
 using curriculumManager.src.infrastructure.repositories.interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -13,6 +14,9 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlite(builder.Configuration.GetConnectionString("dbConnection")));
 
 builder.Services.AddTransient<IUserRepository, UserRepository>()
                 .AddTransient<ICustomerRepository, CustomerRepository>()
@@ -77,10 +81,8 @@ builder.Services.AddAuthentication(x =>
     };
 });
 
-builder.Services.AddDbContext<AppDbContext>(options =>
-        options.UseSqlite(builder.Configuration.GetConnectionString("dbConnection")));
-var app = builder.Build();
 
+var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -102,5 +104,7 @@ app.UseAuthorization();
 app.UseMiddleware<exceptionMiddleware>();
 
 app.MapControllers();
+
+SeedData.Seed(app);
 
 app.Run();

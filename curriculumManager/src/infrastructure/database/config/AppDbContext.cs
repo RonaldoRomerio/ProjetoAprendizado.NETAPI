@@ -1,4 +1,5 @@
 ﻿using curriculumManager.src.domain.models;
+using curriculumManager.src.infrastructure.database.seeds;
 using Microsoft.EntityFrameworkCore;
 
 namespace curriculumManager.src.infrastructure.database.config
@@ -11,6 +12,8 @@ namespace curriculumManager.src.infrastructure.database.config
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Experience> Experience { get; set; }
         public DbSet<Education> Education { get; set; }
+        public DbSet<State> State { get; set; }
+        public DbSet<City> City { get; set; }
 
         public static AppDbContext create(IConfiguration configuration)
         {
