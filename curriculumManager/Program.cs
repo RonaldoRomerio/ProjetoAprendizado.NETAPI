@@ -52,7 +52,7 @@ builder.Services.AddSwaggerGen(x =>
                 Reference = new OpenApiReference
                 {
                     Type = ReferenceType.SecurityScheme,
-                    Id = "bearer",
+                    Id = "Bearer",
                 },
                 Scheme = "oauth2",
                 Name = "Bearer",

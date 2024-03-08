@@ -62,7 +62,7 @@ namespace curriculumManager.src.infrastructure.repositories
         }
         public async Task<bool> hasNextPage(int page)
         {
-            bool hasNextPage = _context.Customer.Skip(page + 10).Any();
+            bool hasNextPage = await _context.Customer.Skip(page + 10).AnyAsync();
             return hasNextPage;
         }
     }

@@ -1,5 +1,6 @@
 ﻿using curriculumManager.src.application.interfaces;
 using curriculumManager.src.domain.dtos.experience;
+using curriculumManager.src.domain.Enum;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,7 +28,7 @@ namespace curriculumManager.src.client.controllers
         }
 
         [HttpGet("getOne/{id}")]
-        [Authorize(Roles = "0,1")]
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult> getByIdExperience(int id)
         {
             var experience = await _experienceService.getByIdAsync(id);
