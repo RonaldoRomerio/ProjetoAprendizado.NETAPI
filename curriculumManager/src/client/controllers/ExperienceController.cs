@@ -8,22 +8,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace curriculumManager.src.client.controllers
 {
-    [ApiController]
-    [Route("v1/Experience")]
-    public class ExperienceController : ControllerBase
+    public class ExperienceController : BasicController<IExperienceService>
     {
-        private readonly IExperienceService _experienceService;
-
-        public ExperienceController(IExperienceService experienceService)
-        {
-            _experienceService = experienceService;
-        }
+        public ExperienceController(IExperienceService service) : base(service){}
 
         [HttpGet("{customerId}")]
         [Authorize(Roles = "admin,customer")]
         public async Task<ActionResult> getAllExperiences(int customerId)
         {
-            var listExperience = await _experienceService.selectAll(customerId);
+            var listExperience = await _service.selectAll(customerId);
             return Ok(listExperience);
         }
 
@@ -31,7 +24,7 @@ namespace curriculumManager.src.client.controllers
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> getByIdExperience(int id)
         {
-            var experience = await _experienceService.getByIdAsync(id);
+            var experience = await _service.getByIdAsync(id);
             return Ok(experience);
         }
 
@@ -39,7 +32,7 @@ namespace curriculumManager.src.client.controllers
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> insertExperience([FromBody] ExperienceInsert experience)
         {
-            var insertedExperience = await _experienceService.insertAsync(experience);
+            var insertedExperience = await _service.insertAsync(experience);
             return Ok(insertedExperience);
         }
 
@@ -47,7 +40,7 @@ namespace curriculumManager.src.client.controllers
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> updateExperience([FromBody] ExperienceWithId experience)
         {
-            var updatedExperience = await _experienceService.UpdateAsync(experience);
+            var updatedExperience = await _service.UpdateAsync(experience);
             return Ok(updatedExperience);
         }
 
@@ -56,7 +49,7 @@ namespace curriculumManager.src.client.controllers
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> deleteExperience(int id)
         {
-            int idDeleted = await _experienceService.DeleteAsync(id);
+            int idDeleted = await _service.DeleteAsync(id);
             return Ok(idDeleted);
         }
     }

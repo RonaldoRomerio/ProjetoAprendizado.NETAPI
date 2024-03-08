@@ -9,20 +9,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace curriculumManager.src.client.controllers
 {
-    [ApiController]
-    [Route("v1/Education")]
-    public class EducationController : ControllerBase
+    public class EducationController : BasicController<IEducationService>
     {
-        private readonly IEducationService _educationService;
-        public EducationController(IEducationService educationService)
-        {
-            _educationService = educationService;
-        }
+        public EducationController(IEducationService service) : base(service){}
         [HttpGet("{customerId}")]
         [Authorize(Roles = "admin,customer")]
         public async Task<ActionResult> getAllEducations(int customerId)
         {
-            var listEducation = await _educationService.selectAll(customerId);
+            var listEducation = await _service.selectAll(customerId);
             return Ok(listEducation);
         }
 
@@ -30,7 +24,7 @@ namespace curriculumManager.src.client.controllers
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> getOneEducation(int id)
         {
-            var education = await _educationService.getByIdAsync(id);
+            var education = await _service.getByIdAsync(id);
             return Ok(education);
         }
 
@@ -38,7 +32,7 @@ namespace curriculumManager.src.client.controllers
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> insertEducation([FromBody] EducationInsert education)
         {
-            var educationInserted = await _educationService.insertAsync(education);
+            var educationInserted = await _service.insertAsync(education);
             return Ok(educationInserted);
         }
 
@@ -47,7 +41,7 @@ namespace curriculumManager.src.client.controllers
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> updateEducation([FromBody] EducationWithId education)
         {
-            var educationInserted = await _educationService.UpdateAsync(education);
+            var educationInserted = await _service.UpdateAsync(education);
             return Ok(educationInserted);
         }
 
@@ -55,7 +49,7 @@ namespace curriculumManager.src.client.controllers
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> deleteEducation(int id)
         {
-            int idDeleted = await _educationService.DeleteAsync(id);
+            int idDeleted = await _service.DeleteAsync(id);
             return Ok(idDeleted);
         }
     }

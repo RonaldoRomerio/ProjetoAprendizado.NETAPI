@@ -5,22 +5,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace curriculumManager.src.client.controllers
 {
-    [ApiController]
-    [Route("v1")]
-    public class LoginJWTController : ControllerBase
+    public class LoginJWTController : BasicController<IUserLogin>
     {
-        protected IUserLogin _UserService;
-
-        public LoginJWTController(IUserLogin userService)
-        {
-            _UserService = userService;
-        }
+        public LoginJWTController(IUserLogin service) : base(service){}
 
         [HttpPost]
         [Route("Login")]
         public async Task<ActionResult> Authenticate([FromBody] LoginUser loginUser)
         {
-            var userLogin = await _UserService.login(loginUser);
+            var userLogin = await _service.login(loginUser);
             return Ok(userLogin);
         }
 
@@ -28,7 +21,7 @@ namespace curriculumManager.src.client.controllers
         [Route("RegisterAdmin")]
         public async Task<ActionResult> RegisterAdmin([FromBody] InsertUser user)
         {
-            var newUser = await _UserService.RegisterUserAdmin(user);
+            var newUser = await _service.RegisterUserAdmin(user);
 
             return Ok(newUser);
 

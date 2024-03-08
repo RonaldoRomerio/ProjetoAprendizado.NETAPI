@@ -8,23 +8,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace curriculumManager.src.client.controllers
 {
-    [ApiController]
-    [Route("v1/Customer")]
-    public class CustomerController : ControllerBase
+    public class CustomerController : BasicController<ICustomerService>
     {
-        private readonly ICustomerService _customerService;
-
-        public CustomerController(ICustomerService customerService)
-        {
-            _customerService = customerService;
-        }
+        public CustomerController(ICustomerService service) : base (service){}
 
         [HttpGet("page/{customerId}")]
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> getAllCustomers(int page)
         {
-            var listCustomer = await _customerService.selectAll(page);
-            var hasNextPage = await _customerService.hasNextPage(page);
+            var listCustomer = await _service.selectAll(page);
+            var hasNextPage = await _service.hasNextPage(page);
 
             return  Ok(new ListReturn<CustomerWithPhoto> { list = listCustomer, hasNextPage= hasNextPage });
         }
@@ -33,7 +26,7 @@ namespace curriculumManager.src.client.controllers
         [Authorize(Roles = "admin,customer")]
         public async Task<ActionResult> getByIdCustomer(int id)
         {
-            var Customer = await _customerService.getByIdAsync(id);
+            var Customer = await _service.getByIdAsync(id);
             return Ok(Customer);
         }
 
@@ -41,7 +34,7 @@ namespace curriculumManager.src.client.controllers
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> insertCustomer([FromBody] CustomerInsert customer)
         {
-            var insertedCustomer = await _customerService.insertAsync(customer);
+            var insertedCustomer = await _service.insertAsync(customer);
             return Ok(insertedCustomer);
         }
 
@@ -49,7 +42,7 @@ namespace curriculumManager.src.client.controllers
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> updateCustomer([FromBody] CustomerWithId customer)
         {
-            var updatedCustomer = await _customerService.UpdateAsync(customer);
+            var updatedCustomer = await _service.UpdateAsync(customer);
             return Ok(updatedCustomer);
         }
 
@@ -58,7 +51,7 @@ namespace curriculumManager.src.client.controllers
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> deleteCustomer(int id)
         {
-            int idDeleted = await _customerService.DeleteAsync(id);
+            int idDeleted = await _service.DeleteAsync(id);
             return Ok(idDeleted);
         }
     }
