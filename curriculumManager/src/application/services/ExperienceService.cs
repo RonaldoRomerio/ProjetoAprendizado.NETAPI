@@ -35,6 +35,7 @@ namespace curriculumManager.src.application.services
         public async Task<ExperienceWithId> insertAsync(ExperienceInsert experience)
         {
             var experienceComplete = _mapper.Map<Experience>(experience);
+            experienceComplete.Created_at = DateTime.UtcNow;
             var experienceDAO = await _experienceRepository.insertAsync(experienceComplete);
             var experienceWithId = _mapper.Map<ExperienceWithId>(experienceDAO);
 
@@ -43,7 +44,7 @@ namespace curriculumManager.src.application.services
 
         public async Task<List<ExperienceWithId>> selectAll(int customerId)
         {
-            var experienceDAO = await _experienceRepository.getByIdAsync(customerId);
+            var experienceDAO = await _experienceRepository.selectAll(customerId);
             var experienceWithId = _mapper.Map<List<ExperienceWithId>>(experienceDAO);
 
             return experienceWithId;

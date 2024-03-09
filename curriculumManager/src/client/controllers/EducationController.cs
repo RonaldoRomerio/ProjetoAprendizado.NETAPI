@@ -37,7 +37,7 @@ namespace curriculumManager.src.client.controllers
         }
 
         // PUT api/<EducationController>/5
-        [HttpPut("{id}")]
+        [HttpPut]
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> updateEducation([FromBody] EducationWithId education)
         {

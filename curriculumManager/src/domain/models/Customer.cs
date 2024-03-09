@@ -7,23 +7,23 @@ namespace curriculumManager.src.domain.models
     {
         [Required]
         public string Name { get; set; }
-        public string Photo { get; set; }
-        public DateTime BirthDate { get; set; }
-        public string Adress { get; set; }
-        public string Neighborhood { get; set; }
+        public string? Photo { get; set; }
+        public DateTime? BirthDate { get; set; }
+        public string? Adress { get; set; }
+        public string? Neighborhood { get; set; }
         [ForeignKey("City")]
-        public int CityId { get; set; }
+        public int? CityId { get; set; }
         [ForeignKey("State")]
-        public int StateId { get; set; }
-        public int AdressCode { get; set; }
+        public int? StateId { get; set; }
+        public int? AdressCode { get; set; }
         [Required]
         [RegularExpression(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$", ErrorMessage = "Por favor, insira um endereço de e-mail válido.")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        public string Resume { get; set; }
+        public string? Resume { get; set; }
         [Required]
-        public int PhoneNumber { get; set; }
-        public int PhoneNumberOptional { get; set; }
+        public int? PhoneNumber { get; set; }
+        public int? PhoneNumberOptional { get; set; }
 
         public Customer() { }
 

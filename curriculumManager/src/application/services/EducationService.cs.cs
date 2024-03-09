@@ -34,6 +34,7 @@ namespace curriculumManager.src.application.services
         public async Task<EducationWithId> insertAsync(EducationInsert education)
         {
             var educationComplete = _mapper.Map<Education>(education);
+            educationComplete.Created_at = DateTime.UtcNow;
             var educationDAO = await _educationRepository.insertAsync(educationComplete);
             var educationWithId = _mapper.Map<EducationWithId>(educationDAO);
 
@@ -42,7 +43,7 @@ namespace curriculumManager.src.application.services
 
         public async Task<List<EducationWithId>> selectAll(int customerId)
         {
-            var educationDAO = await _educationRepository.getByIdAsync(customerId);
+            var educationDAO = await _educationRepository.selectAll(customerId);
             var educationWithId = _mapper.Map<List<EducationWithId>>(educationDAO);
 
             return educationWithId;
@@ -51,7 +52,7 @@ namespace curriculumManager.src.application.services
         public async Task<EducationWithId> UpdateAsync(EducationWithId education)
         {
             var educationComplete = _mapper.Map<Education>(education);
-            var educationDAO = await _educationRepository.insertAsync(educationComplete);
+            var educationDAO = await _educationRepository.UpdateAsync(educationComplete);
             var educationWithId = _mapper.Map<EducationWithId>(educationDAO);
 
             return educationWithId;

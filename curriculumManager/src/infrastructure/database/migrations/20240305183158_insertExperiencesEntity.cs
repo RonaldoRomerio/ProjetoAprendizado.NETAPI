@@ -14,8 +14,8 @@ namespace curriculumManager.src.infrastructure.database.migrations
                 name: "Experience",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("Sqlite:Identity", true),
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     CustomerId = table.Column<int>(type: "int", nullable: false),
                     Company = table.Column<String>(type: "VARCHAR", nullable: true),
                     StartDate = table.Column<DateTime>(type: "TEXT", nullable: true),

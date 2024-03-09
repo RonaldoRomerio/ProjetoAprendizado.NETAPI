@@ -13,14 +13,14 @@ namespace curriculumManager.src.infrastructure.database.migrations
                 name: "Education",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("Sqlite:Identity", true),
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     CustomerId = table.Column<int>(type: "int", nullable: false),
                     NameSchool = table.Column<String>(type: "VARCHAR", nullable: true),
                     graduation = table.Column<int>(type: "int", nullable: true),
                     StartYear = table.Column<int>(type: "int", nullable: true),
                     EndYear = table.Column<int>(type: "int", nullable: false),
-                    Class = table.Column<int>(type: "int", nullable: false),
+                    Course = table.Column<String>(type: "VARCHAR", nullable: false),
                     Created_at = table.Column<DateTime>(type: "TEXT", nullable: false),
                     Deleted_at = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },

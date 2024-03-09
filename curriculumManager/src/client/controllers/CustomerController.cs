@@ -12,14 +12,14 @@ namespace curriculumManager.src.client.controllers
     {
         public CustomerController(ICustomerService service) : base (service){}
 
-        [HttpGet("page/{customerId}")]
+        [HttpGet]
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> getAllCustomers(int page)
         {
             var listCustomer = await _service.selectAll(page);
             var hasNextPage = await _service.hasNextPage(page);
 
-            return  Ok(new ListReturn<CustomerWithPhoto> { list = listCustomer, hasNextPage= hasNextPage });
+            return  Ok(new ListReturn<CustomerWithId> { list = listCustomer, hasNextPage= hasNextPage });
         }
 
         [HttpGet("getOne/{id}")]
@@ -35,7 +35,21 @@ namespace curriculumManager.src.client.controllers
         public async Task<ActionResult> insertCustomer([FromBody] CustomerInsert customer)
         {
             var insertedCustomer = await _service.insertAsync(customer);
+
             return Ok(insertedCustomer);
+        }
+        [HttpPut("Photo")]
+        [Authorize(Roles = "admin")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult> PutImage([FromForm] CustomerPhoto customer)
+        {
+            var verifyIfExists = await _service.verifyIfExists(customer.Id);
+            if (!verifyIfExists)
+                return NotFound("Customer not found");
+
+            var imageInserted = _service.savePhoto(customer);
+            var updateFilePathImage = await _service.insertPhotoOnCustomer(customer.Id, imageInserted);
+            return Ok(updateFilePathImage);
         }
 
         [HttpPut]

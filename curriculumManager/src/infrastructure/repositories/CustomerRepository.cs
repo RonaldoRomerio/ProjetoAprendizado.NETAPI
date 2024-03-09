@@ -3,6 +3,7 @@ using curriculumManager.src.domain.models;
 using curriculumManager.src.infrastructure.database.config;
 using curriculumManager.src.infrastructure.repositories.interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Xml.Linq;
 
 namespace curriculumManager.src.infrastructure.repositories
 {
@@ -40,9 +41,12 @@ namespace curriculumManager.src.infrastructure.repositories
 
         public async Task<Customer> getByIdAsync(int id)
         {
-            return await _context
+            var customer = await _context
             .Customer
-            .FirstOrDefaultAsync(x => x.Id == id && x.Deleted_at == null);
+            .Where(x => x.Id == id && x.Deleted_at == null)
+            .FirstOrDefaultAsync();
+
+            return customer;
         }
 
         public async Task<Customer> insertAsync(Customer customer)
@@ -64,6 +68,19 @@ namespace curriculumManager.src.infrastructure.repositories
         {
             bool hasNextPage = await _context.Customer.Skip(page + 10).AnyAsync();
             return hasNextPage;
+        }
+        public async Task<int> verifyIfExists(int id)
+        {
+            return await _context.Customer.CountAsync(x => x.Id == id && x.Deleted_at == null);
+        }
+        public async Task<Customer> insertPhotoOnCustomer(int id, String photoPath)
+        {
+            var CustomerToUpdate = await getByIdAsync(id);
+
+            CustomerToUpdate.Photo = photoPath;
+            await _context.SaveChangesAsync();
+
+            return CustomerToUpdate;
         }
     }
 }
