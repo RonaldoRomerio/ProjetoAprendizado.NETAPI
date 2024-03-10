@@ -4,7 +4,7 @@ using System.Text;
 
 namespace curriculumManager.src.domain.models
 {
-    public class EntityBase
+    public abstract class EntityBase
     {
         [Key]
         public int Id { get; set; }
@@ -15,7 +15,7 @@ namespace curriculumManager.src.domain.models
         public override string ToString()
         {
             int count = 0;
-            Type tipoClasse = this.GetType();
+            Type tipoClasse = GetType();
             StringBuilder toString = new StringBuilder();
 
             PropertyInfo[] propriedades = tipoClasse.GetProperties();
