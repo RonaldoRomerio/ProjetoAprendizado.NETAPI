@@ -6,18 +6,12 @@ using curriculumManager.src.infrastructure.repositories;
 
 namespace curriculumManager.src.application.services
 {
-    public class UserService : IUserLogin
+    public class UserService : BaseService<IUserRepository>, IUserLogin
     {
-        protected readonly IUserRepository _userRepository;
-        protected readonly IMapper _mapper;
-
-        public UserService(IUserRepository userRepository, IMapper mapper) { 
-            _userRepository = userRepository;
-            _mapper = mapper;
-        }
+        public UserService(IUserRepository userRepository, IMapper mapper) : base(userRepository, mapper) { }
         public async Task<LoggedUser> login(LoginUser loginUser)
         {
-            User user = await _userRepository.findUser(loginUser.Name);
+            User user = await _repository.findUser(loginUser.Name);
             if (user == null)
                 throw new UnauthorizedAccessException("Login ou senha inválido");
 
@@ -41,7 +35,7 @@ namespace curriculumManager.src.application.services
             completeUser.Password = BCrypt.Net.BCrypt.HashPassword(completeUser.Password, 15);
             completeUser.Created_at = DateTime.UtcNow;
 
-            var userCreated = await _userRepository.createUser(completeUser);
+            var userCreated = await _repository.createUser(completeUser);
 
             return requestToken(userCreated);
 
@@ -49,7 +43,7 @@ namespace curriculumManager.src.application.services
 
         public async Task<bool> VerifyIfExists(String name)
         {
-            var exists = await _userRepository.verifyIfExists(name) > 0;
+            var exists = await _repository.verifyIfExists(name) > 0;
             return exists;
         }
 

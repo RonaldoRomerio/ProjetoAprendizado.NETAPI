@@ -7,25 +7,18 @@ using curriculumManager.src.infrastructure.repositories.interfaces;
 
 namespace curriculumManager.src.application.services
 {
-    public class EducationService : IEducationService
+    public class EducationService : BaseService<IEducationRepository>, IEducationService
     {
-        private readonly IEducationRepository _educationRepository;
-        private readonly IMapper _mapper;
-
-        public EducationService(IEducationRepository educationRepository, IMapper mapper)
-        {
-            _educationRepository = educationRepository;
-            _mapper = mapper;
-        }
+        public EducationService(IEducationRepository educationRepository, IMapper mapper) : base(educationRepository, mapper) { }
 
         public async Task<int> DeleteAsync(int id)
         {
-            return await _educationRepository.DeleteAsync(id);
+            return await _repository.DeleteAsync(id);
         }
 
         public async Task<EducationWithId> getByIdAsync(int id)
         {
-            var educationDAO = await _educationRepository.getByIdAsync(id);
+            var educationDAO = await _repository.getByIdAsync(id);
             var educationWithId = _mapper.Map<EducationWithId>(educationDAO);
 
             return educationWithId;
@@ -35,7 +28,7 @@ namespace curriculumManager.src.application.services
         {
             var educationComplete = _mapper.Map<Education>(education);
             educationComplete.Created_at = DateTime.UtcNow;
-            var educationDAO = await _educationRepository.insertAsync(educationComplete);
+            var educationDAO = await _repository.insertAsync(educationComplete);
             var educationWithId = _mapper.Map<EducationWithId>(educationDAO);
 
             return educationWithId;
@@ -43,7 +36,7 @@ namespace curriculumManager.src.application.services
 
         public async Task<List<EducationWithId>> selectAll(int customerId)
         {
-            var educationDAO = await _educationRepository.selectAll(customerId);
+            var educationDAO = await _repository.selectAll(customerId);
             var educationWithId = _mapper.Map<List<EducationWithId>>(educationDAO);
 
             return educationWithId;
@@ -52,7 +45,7 @@ namespace curriculumManager.src.application.services
         public async Task<EducationWithId> UpdateAsync(EducationWithId education)
         {
             var educationComplete = _mapper.Map<Education>(education);
-            var educationDAO = await _educationRepository.UpdateAsync(educationComplete);
+            var educationDAO = await _repository.UpdateAsync(educationComplete);
             var educationWithId = _mapper.Map<EducationWithId>(educationDAO);
 
             return educationWithId;

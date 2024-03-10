@@ -7,25 +7,18 @@ using curriculumManager.src.infrastructure.repositories.interfaces;
 
 namespace curriculumManager.src.application.services
 {
-    public class CustomerService : ICustomerService
+    public class CustomerService : BaseService<ICustomerRepository>, ICustomerService
     {
+        public CustomerService(ICustomerRepository customerRepository, IMapper mapper):base(customerRepository, mapper) { }
 
-        private readonly ICustomerRepository _customerRepository;
-        protected readonly IMapper _mapper;
-
-        public CustomerService(ICustomerRepository customerRepository, IMapper mapper)
-        {
-            _customerRepository = customerRepository;
-            _mapper = mapper;
-        }
         public async Task<int> DeleteAsync(int id)
         {
-            return await _customerRepository.DeleteAsync(id);
+            return await _repository.DeleteAsync(id);
         }
 
         public async Task<CustomerWithPhoto> getByIdAsync(int id)
         {
-            var CustomerDAO = await _customerRepository.getByIdAsync(id);
+            var CustomerDAO = await _repository.getByIdAsync(id);
             var CustomerWithPhoto = _mapper.Map<CustomerWithPhoto>(CustomerDAO);
             return CustomerWithPhoto;
         }
@@ -34,7 +27,7 @@ namespace curriculumManager.src.application.services
         {
             var customerComplete = _mapper.Map<Customer>(customer);
             customerComplete.Created_at = DateTime.UtcNow;
-            var CustomerDAO = await _customerRepository.insertAsync(customerComplete);
+            var CustomerDAO = await _repository.insertAsync(customerComplete);
             var CustomerMapped = _mapper.Map<CustomerWithId>(CustomerDAO);
             return CustomerMapped;
         }
@@ -44,7 +37,7 @@ namespace curriculumManager.src.application.services
             int PageSize = 10;
             int initialIndex = (page > 0 ? page - 1 : page) * PageSize;
 
-            var CustomerDAO = await _customerRepository.selectAll(initialIndex);
+            var CustomerDAO = await _repository.selectAll(initialIndex);
             var CustomerMapped = _mapper.Map<List<CustomerWithId>>(CustomerDAO);
             return CustomerMapped;
         }
@@ -52,7 +45,7 @@ namespace curriculumManager.src.application.services
         public async Task<CustomerWithId> UpdateAsync(CustomerWithId customer)
         {
             var customerComplete = _mapper.Map<Customer>(customer);
-            var CustomerDAO = await _customerRepository.UpdateAsync(customerComplete);
+            var CustomerDAO = await _repository.UpdateAsync(customerComplete);
             var CustomerMapped = _mapper.Map<CustomerWithId>(CustomerDAO);
             return CustomerMapped;
         }
@@ -61,7 +54,7 @@ namespace curriculumManager.src.application.services
             int PageSize = 10;
             int initialIndex = (page > 0 ? page - 1 : page) * PageSize;
 
-            return await _customerRepository.hasNextPage(initialIndex);
+            return await _repository.hasNextPage(initialIndex);
         }
 
         public string savePhoto(CustomerPhoto customer)
@@ -79,12 +72,12 @@ namespace curriculumManager.src.application.services
 
         public async Task<bool> verifyIfExists(int id)
         {
-            return await _customerRepository.verifyIfExists(id) > 0;
+            return await _repository.verifyIfExists(id) > 0;
         }
 
         public async Task<CustomerWithPhoto> insertPhotoOnCustomer(int id, String photoPath)
         {
-            var customerDAO = await _customerRepository.insertPhotoOnCustomer(id, photoPath);
+            var customerDAO = await _repository.insertPhotoOnCustomer(id, photoPath);
             var CustomerMapped = _mapper.Map<CustomerWithPhoto>(customerDAO);
             return CustomerMapped;
         }
