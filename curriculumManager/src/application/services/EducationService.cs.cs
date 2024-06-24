@@ -2,6 +2,7 @@
 using curriculumManager.src.application.interfaces;
 using curriculumManager.src.domain.dtos.education;
 using curriculumManager.src.domain.dtos.experience;
+using curriculumManager.src.domain.Enum;
 using curriculumManager.src.domain.models;
 using curriculumManager.src.infrastructure.repositories.interfaces;
 
@@ -36,7 +37,13 @@ namespace curriculumManager.src.application.services
 
         public async Task<List<EducationWithId>> selectAll(int customerId)
         {
-            var educationDAO = await _repository.selectAll(customerId);
+            List<IFilter> filters = new List<IFilter>();
+
+            filters.Add(new Filter<int>("Id", FilterOperator.Equal, 2));
+            filters.Add(new Filter<int>("CustomerId", FilterOperator.Equal, customerId));
+            filters.Add(new Filter<DateTime?>("Deleted_At", FilterOperator.Equal, null));
+
+            var educationDAO = await _repository.selectAll(customerId, filters);
             var educationWithId = _mapper.Map<List<EducationWithId>>(educationDAO);
 
             return educationWithId;

@@ -1,5 +1,7 @@
-﻿using curriculumManager.src.domain.models;
+﻿using curriculumManager.src.application.interfaces;
+using curriculumManager.src.domain.models;
 using curriculumManager.src.infrastructure.database.config;
+using curriculumManager.src.infrastructure.repositories.Util;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -50,14 +52,12 @@ namespace curriculumManager.src.infrastructure.repositories
             return entity;
         }
 
-        public virtual async Task<List<TEntity>> selectAll(int customerId)
+        public virtual async Task<List<TEntity>> selectAll(int customerId, List<IFilter> filters)
         {
+            FilterExpression<TEntity> filterExpression = new FilterExpression<TEntity>();
+            IQueryable<TEntity> query = filterExpression.insertWhereConditional(_dbSet, filters);
 
-            PropertyInfo idProperty = typeof(TEntity).GetProperty("Id");
-            PropertyInfo deletedAtProperty = typeof(TEntity).GetProperty("Deleted_at");
-
-            return await _dbSet
-                .Where(x => EF.Property<DateTime?>(x, "Deleted_at") == null)
+            return await query
                 .AsNoTracking()
                 .OrderBy(x => EF.Property<int>(x, "Id"))
                 .ToListAsync();

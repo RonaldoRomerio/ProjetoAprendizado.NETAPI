@@ -1,4 +1,5 @@
-﻿using curriculumManager.src.domain.models;
+﻿using curriculumManager.src.application.interfaces;
+using curriculumManager.src.domain.models;
 using curriculumManager.src.infrastructure.database.config;
 using curriculumManager.src.infrastructure.repositories.interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +13,7 @@ namespace curriculumManager.src.infrastructure.repositories
         {
             _dbSet = _context.Customer;
         }
-        public override async Task<List<Customer>> selectAll(int page)
+        public override async Task<List<Customer>> selectAll(int page, List<IFilter> filters)
         {
             return await _context
              .Customer

@@ -37,7 +37,8 @@ namespace curriculumManager.src.application.services
             int PageSize = 10;
             int initialIndex = (page > 0 ? page - 1 : page) * PageSize;
 
-            var CustomerDAO = await _repository.selectAll(initialIndex);
+
+            var CustomerDAO = await _repository.selectAll(initialIndex, null);
             var CustomerMapped = _mapper.Map<List<CustomerWithId>>(CustomerDAO);
             return CustomerMapped;
         }

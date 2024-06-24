@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using curriculumManager.src.application.interfaces;
 using curriculumManager.src.domain.dtos.experience;
+using curriculumManager.src.domain.Enum;
 using curriculumManager.src.domain.models;
 using curriculumManager.src.infrastructure.database.config;
 using curriculumManager.src.infrastructure.repositories.interfaces;
@@ -38,7 +39,12 @@ namespace curriculumManager.src.application.services
 
         public async Task<List<ExperienceWithId>> selectAll(int customerId)
         {
-            var experienceDAO = await _repository.selectAll(customerId);
+            List<IFilter> filters = new List<IFilter>();
+
+            filters.Add(new Filter<int>("Id", FilterOperator.Equal, 2));
+            filters.Add(new Filter<int>("CustomerId", FilterOperator.Equal, customerId));
+
+            var experienceDAO = await _repository.selectAll(customerId, filters);
             var experienceWithId = _mapper.Map<List<ExperienceWithId>>(experienceDAO);
 
             return experienceWithId;
